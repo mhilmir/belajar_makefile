@@ -1,0 +1,26 @@
+makefile digunakan ketika kita membuat projek yang dalam proses compilenya dibutuhkan linking ke berbagai library
+Jadi agar kita tidak ribet untuk terus-terusan menulis nama-nama librarynya setiap kita ingin mengompile source code tersebut.
+
+nama filenya harus "makefile", bisa pakai huruf besar maupun kecil
+
+
+
+
+
+
+mari kita bedah kode makefile simpel ini:
+
+   1 | %.o: %.cpp
+   2 |     g++ -c $^ -o $@
+   3 | 
+   4 | main: main.o
+   5 |     g++ -o $@ $^ -lsfml-graphics -lsfml-window -lsfml-system
+
+pada baris 1, makefile mengambil semua file .0 dan .cpp yang ada
+pada baris 2, tanda $ digunakan untuk memanggil, dimana
+    $@ berarti memanggil semua file .o
+    $^ berarti memanggil semua file .cpp
+sehingga codenya menjadi : g++ -c main.cpp -o main.o
+
+pada baris 4 sama spt sebelumnya sehingga codenya menjadi:
+g++ -o main main.o -lsfml-graphics -lsfml-window -lsfml-system
