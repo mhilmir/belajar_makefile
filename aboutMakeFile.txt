@@ -18,8 +18,8 @@ mari kita bedah kode makefile simpel ini:
 
 pada baris 1, makefile mengambil semua file .0 dan .cpp yang ada
 pada baris 2, tanda $ digunakan untuk memanggil, dimana
-    $@ berarti memanggil semua file .o
-    $^ berarti memanggil semua file .cpp
+    $@ berarti memanggil semua file .o (sebelum titik dua)
+    $^ berarti memanggil semua file .cpp (setelah titik dua)
 sehingga codenya menjadi : g++ -c main.cpp -o main.o
 
 pada baris 4 sama spt sebelumnya sehingga codenya menjadi:
